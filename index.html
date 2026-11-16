@@ -1,149 +1,427 @@
+
 <!DOCTYPE html>
 <html lang="pt-PT">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Eliane Soluções Digitais - Sistemas de gestão e soluções digitais para empresas e profissionais.">
-  <title>Eliane | Soluções Digitais</title>
-  <link rel="stylesheet" href="css/style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Eliane Soluções Digitais — sistemas de gestão para negócios de beleza e automóveis.">
+<title>Eliane | Soluções Digitais</title>
+
+<style>
+:root {
+  --navy: #14243a;
+  --blue: #294d70;
+  --gold: #b89561;
+  --light: #f5f7fa;
+  --white: #fff;
+  --text: #344255;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--text);
+  background: var(--light);
+  line-height: 1.7;
+}
+
+a { text-decoration: none; }
+
+.container {
+  width: min(1120px, 90%);
+  margin: auto;
+}
+
+header {
+  background: var(--navy);
+  padding: 20px 0;
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.logo {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.logo span { color: var(--gold); }
+
+nav { display: flex; gap: 22px; flex-wrap: wrap; }
+nav a { color: white; font-size: .95rem; }
+nav a:hover { color: var(--gold); }
+
+.hero {
+  background: linear-gradient(130deg, var(--navy), var(--blue));
+  color: white;
+  padding: 100px 0;
+}
+
+.hero-content { max-width: 780px; }
+
+.tag {
+  color: var(--gold);
+  font-weight: 800;
+  letter-spacing: 2px;
+  font-size: .78rem;
+}
+
+.hero h1 {
+  font-size: clamp(2.3rem, 5vw, 3.8rem);
+  line-height: 1.15;
+  margin: 20px 0;
+}
+
+.hero p {
+  font-size: 1.12rem;
+  color: #e0e7ef;
+  max-width: 650px;
+  margin-bottom: 30px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 13px 23px;
+  border-radius: 7px;
+  font-weight: 700;
+  background: var(--gold);
+  color: var(--navy);
+  transition: .25s;
+  text-align: center;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  background: #e8d8bd;
+}
+
+section { padding: 75px 0; }
+
+.section-heading {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 40px;
+}
+
+.section-heading h2 {
+  color: var(--navy);
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  line-height: 1.2;
+  margin: 12px 0;
+}
+
+.section-heading p { color: #687789; }
+
+.intro {
+  background: white;
+  text-align: center;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+}
+
+.product-card {
+  background: white;
+  border: 1px solid #e4e9ef;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 12px 35px #14243a0c;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-card img {
+  width: 100%;
+  height: 300px;
+  object-fit: contain;
+  background: #f0f2f5;
+  padding: 12px;
+}
+
+.product-info {
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex: 1;
+}
+
+.product-info h3 {
+  color: var(--navy);
+  font-size: 1.65rem;
+  margin: 8px 0;
+}
+
+.product-info p {
+  color: #687789;
+  margin-bottom: 18px;
+}
+
+.product-info ul {
+  padding-left: 20px;
+  margin-bottom: 24px;
+  color: var(--text);
+}
+
+.product-info li { margin-bottom: 6px; }
+
+.product-info .btn { margin-top: auto; }
+
+.advantages { background: white; }
+
+.advantage-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.advantage {
+  background: var(--light);
+  padding: 25px;
+  border-left: 3px solid var(--gold);
+  border-radius: 8px;
+}
+
+.advantage h3 { color: var(--navy); margin-bottom: 8px; }
+.advantage p { color: #687789; }
+
+.contact {
+  background: linear-gradient(130deg, var(--navy), var(--blue));
+  color: white;
+  text-align: center;
+}
+
+.contact h2 {
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  line-height: 1.2;
+  max-width: 750px;
+  margin: 12px auto 18px;
+}
+
+.contact p {
+  max-width: 650px;
+  margin: 0 auto 28px;
+  color: #e0e7ef;
+}
+
+footer {
+  background: #0c1727;
+  color: #dce5ef;
+  text-align: center;
+  padding: 30px 15px;
+  font-size: .9rem;
+}
+
+footer p + p { color: #aebdce; }
+
+@media (max-width: 760px) {
+  header .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav { justify-content: center; gap: 14px; }
+
+  .hero { padding: 75px 0; }
+
+  .products-grid,
+  .advantage-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .product-card img { height: 250px; }
+}
+
+@media (max-width: 380px) {
+  nav { gap: 10px; }
+  nav a { font-size: .82rem; }
+}
+</style>
 </head>
 
 <body>
 
-  <header class="header">
-    <div class="container">
-      <a href="#" class="logo">ELIANE<span>.</span></a>
+<header>
+  <div class="container">
+    <a href="#inicio" class="logo">ELIANE<span>.</span></a>
+    <nav>
+      <a href="#inicio">Início</a>
+      <a href="#produtos">Soluções</a>
+      <a href="#vantagens">Vantagens</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </div>
+</header>
 
-      <nav>
-        <a href="#inicio">Início</a>
-        <a href="#produtos">Produtos</a>
-        <a href="#vantagens">Vantagens</a>
-        <a href="#contacto">Contacto</a>
-      </nav>
+<main>
+
+<section class="hero" id="inicio">
+  <div class="container hero-content">
+    <span class="tag">TECNOLOGIA QUE SIMPLIFICA</span>
+    <h1>O seu negócio merece uma gestão mais simples e inteligente.</h1>
+    <p>
+      Soluções digitais desenvolvidas para organizar processos,
+      facilitar tarefas e dar mais controlo ao seu negócio.
+    </p>
+    <a href="#produtos" class="btn">Conheça as nossas soluções</a>
+  </div>
+</section>
+
+<section class="intro">
+  <div class="container">
+    <span class="tag">ELIANE | SOLUÇÕES DIGITAIS</span>
+    <h2>Tecnologia pensada para as necessidades reais do seu negócio.</h2>
+    <p>
+      Criamos ferramentas digitais para profissionais e empresas
+      que procuram mais organização, praticidade e eficiência.
+    </p>
+  </div>
+</section>
+
+<section id="produtos">
+  <div class="container">
+    <div class="section-heading">
+      <span class="tag">AS NOSSAS SOLUÇÕES</span>
+      <h2>Conheça os nossos produtos</h2>
+      <p>
+        Sistemas de gestão para diferentes atividades,
+        com funcionalidades pensadas para simplificar o dia a dia.
+      </p>
     </div>
-  </header>
 
-  <main>
-    <section class="hero" id="inicio">
-      <div class="container">
-        <span class="tag">TECNOLOGIA QUE SIMPLIFICA</span>
+    <div class="products-grid">
 
-        <h1>Transforme a gestão do seu negócio com soluções digitais.</h1>
+      <article class="product-card">
+        <img
+          src="assets/ebs-beauty-systems.jpeg"
+          alt="Ecrã do sistema EBS Beauty">
 
-        <p>
-          Sistemas desenvolvidos para facilitar processos,
-          organizar informações e ajudar empresas a crescer.
-        </p>
-
-        <a href="#produtos" class="btn">Conheça as soluções</a>
-      </div>
-    </section>
-
-    <section class="intro">
-      <div class="container">
-        <h2>As ferramentas certas para o seu negócio.</h2>
-        <p>
-          Desenvolvemos soluções digitais pensadas para
-          responder às necessidades reais de cada atividade.
-          Mais organização, praticidade e controlo.
-        </p>
-      </div>
-    </section>
-
-    <section class="products" id="produtos">
-      <div class="container">
-        <span class="tag">NOSSAS SOLUÇÕES</span>
-        <h2>Conheça os nossos produtos</h2>
-
-        <div class="product-grid">
-
-          <article class="product-card">
-            <div class="product-icon">✦</div>
-            <h3>EBS Beauty</h3>
-            <p class="product-subtitle">
-              Gestão inteligente para negócios de beleza.
-            </p>
-            <p>
-              Uma solução digital para apoiar a organização
-              de agendas, clientes, serviços e rotinas
-              administrativas.
-            </p>
-            <a href="#contacto" class="btn">
-              Solicitar informações
-            </a>
-          </article>
-
-          <article class="product-card">
-            <div class="product-icon">🚘</div>
-            <h3>EBS Auto</h3>
-            <p class="product-subtitle">
-              Organização para negócios automóveis.
-            </p>
-            <p>
-              Sistema desenvolvido para apoiar a gestão
-              de marcações, serviços, clientes e operações
-              de lavagem automóvel.
-            </p>
-            <a href="#contacto" class="btn">
-              Solicitar informações
-            </a>
-          </article>
-
+        <div class="product-info">
+          <span class="tag">BELEZA E BEM-ESTAR</span>
+          <h3>EBS Beauty</h3>
+          <p>
+            Eliane Beauty Systems — uma solução digital
+            para organizar e acompanhar a gestão de negócios
+            de beleza.
+          </p>
+          <ul>
+            <li>Gestão de agenda e marcações</li>
+            <li>Organização de clientes</li>
+            <li>Gestão de serviços</li>
+            <li>Apoio às rotinas do negócio</li>
+          </ul>
+          <a
+            href="https://eliane-solucoes-digitais.github.io/EBS_beauty-systems-teste/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn">
+            Ver demonstração
+          </a>
         </div>
-      </div>
-    </section>
+      </article>
 
-    <section class="advantages" id="vantagens">
-      <div class="container">
-        <span class="tag">PORQUÊ ESCOLHER-NOS?</span>
-        <h2>Tecnologia ao serviço do seu negócio.</h2>
+      <article class="product-card">
+        <img
+          src="assets/ebs-auto-brilho-certo.jpeg"
+          alt="Ecrã do sistema Brilho Certo">
 
-        <div class="advantage-grid">
-          <div>
-            <h3>Organização</h3>
-            <p>Centralize informações e facilite as tarefas diárias.</p>
-          </div>
-
-          <div>
-            <h3>Praticidade</h3>
-            <p>Tenha ferramentas digitais para apoiar a sua rotina.</p>
-          </div>
-
-          <div>
-            <h3>Desenvolvimento</h3>
-            <p>Soluções pensadas para necessidades específicas.</p>
-          </div>
+        <div class="product-info">
+          <span class="tag">GESTÃO AUTOMÓVEL</span>
+          <h3>EBS Auto</h3>
+          <p>
+            Uma solução digital para apoiar a organização
+            de negócios de lavagem automóvel e serviços
+            relacionados.
+          </p>
+          <ul>
+            <li>Agenda de marcações</li>
+            <li>Gestão de pagamentos</li>
+            <li>Controlo de despesas</li>
+            <li>Relatórios e operações</li>
+          </ul>
+          <a
+            href="https://eliane-solucoes-digitais.github.io/ebs-auto-brilho-certo-base-teste/agendamentos.html"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn">
+            Ver demonstração
+          </a>
         </div>
-      </div>
-    </section>
+      </article>
 
-    <section class="contact" id="contacto">
-      <div class="container">
-        <h2>Vamos encontrar a solução ideal para o seu negócio?</h2>
-        <p>
-          Entre em contacto para conhecer os produtos,
-          solicitar informações e conversar sobre uma solução.
-        </p>
-
-        <a
-          href="https://wa.me/351915433044"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="btn">
-          Falar pelo WhatsApp
-        </a>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="container">
-      <p>Eliane | Soluções Digitais</p>
-      <p>Portugal · Tecnologia e inovação para negócios</p>
     </div>
-  </footer>
+  </div>
+</section>
 
-  <script src="js/script.js"></script>
+<section class="advantages" id="vantagens">
+  <div class="container">
+    <div class="section-heading">
+      <span class="tag">PORQUÊ ESCOLHER-NOS?</span>
+      <h2>Mais organização. Mais controlo. Mais praticidade.</h2>
+      <p>
+        Ferramentas digitais que acompanham as necessidades
+        de cada atividade.
+      </p>
+    </div>
+
+    <div class="advantage-grid">
+      <div class="advantage">
+        <h3>Organização</h3>
+        <p>Centralize informações e simplifique tarefas diárias.</p>
+      </div>
+
+      <div class="advantage">
+        <h3>Praticidade</h3>
+        <p>Tenha ferramentas que apoiam a gestão do seu negócio.</p>
+      </div>
+
+      <div class="advantage">
+        <h3>Soluções personalizadas</h3>
+        <p>Conheça ferramentas pensadas para diferentes atividades.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contacto">
+  <div class="container">
+    <span class="tag">VAMOS CONVERSAR?</span>
+    <h2>Descubra como uma solução digital pode ajudar o seu negócio.</h2>
+    <p>
+      Entre em contacto para conhecer os nossos produtos,
+      solicitar uma demonstração ou esclarecer dúvidas.
+    </p>
+    <a
+      href="https://wa.me/351915433044?text=Olá!%20Gostaria%20de%20conhecer%20as%20soluções%20da%20Eliane."
+      target="_blank"
+      rel="noopener noreferrer"
+      class="btn">
+      Falar pelo WhatsApp
+    </a>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <p><strong>Eliane | Soluções Digitais</strong></p>
+    <p>Portugal · Tecnologia e inovação para negócios</p>
+    <p>© 2026 Eliane | Soluções Digitais</p>
+  </div>
+</footer>
+
 </body>
 </html>
-
