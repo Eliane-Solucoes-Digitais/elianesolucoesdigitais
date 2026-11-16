@@ -1,10 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="pt-PT">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Eliane Soluções Digitais — sistemas de gestão para negócios de beleza e automóveis.">
+<meta name="description" content="Eliane | Soluções Digitais — sistemas de gestão para negócios de beleza e automóveis.">
 <title>Eliane | Soluções Digitais</title>
 
 <style>
@@ -49,9 +48,10 @@ header .container {
 
 .logo {
   color: white;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: 800;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
+  white-space: nowrap;
 }
 
 .logo span { color: var(--gold); }
@@ -179,6 +179,34 @@ section { padding: 75px 0; }
 
 .product-info .btn { margin-top: auto; }
 
+/* DEMONSTRAÇÃO EM VÍDEO */
+.demo-video-section {
+  background: #fff;
+}
+
+.demo-video-wrap {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.demo-video {
+  width: 100%;
+  display: block;
+  border-radius: 16px;
+  background: #111;
+  box-shadow: 0 18px 45px #14243a20;
+}
+
+.demo-video-cta {
+  text-align: center;
+  margin-top: 28px;
+}
+
+.demo-video-cta p {
+  color: #687789;
+  margin-bottom: 18px;
+}
+
 .advantages { background: white; }
 
 .advantage-grid {
@@ -242,11 +270,14 @@ footer p + p { color: #aebdce; }
   }
 
   .product-card img { height: 250px; }
+
+  .demo-video { border-radius: 10px; }
 }
 
 @media (max-width: 380px) {
   nav { gap: 10px; }
   nav a { font-size: .82rem; }
+  .logo { font-size: 1rem; }
 }
 </style>
 </head>
@@ -255,10 +286,11 @@ footer p + p { color: #aebdce; }
 
 <header>
   <div class="container">
-    <a href="#inicio" class="logo">ELIANE<span>.</span></a>
+    <a href="#inicio" class="logo">ELIANE <span>| SOLUÇÕES DIGITAIS</span></a>
     <nav>
       <a href="#inicio">Início</a>
       <a href="#produtos">Soluções</a>
+      <a href="#demonstracao-beauty">Demonstração</a>
       <a href="#vantagens">Vantagens</a>
       <a href="#contacto">Contacto</a>
     </nav>
@@ -365,6 +397,53 @@ footer p + p { color: #aebdce; }
   </div>
 </section>
 
+<!-- DEMONSTRAÇÃO EBS BEAUTY -->
+<section class="demo-video-section" id="demonstracao-beauty">
+  <div class="container">
+
+    <div class="section-heading">
+      <span class="tag">VEJA NA PRÁTICA</span>
+      <h2>Conheça o EBS Beauty em funcionamento</h2>
+      <p>
+        Veja como simplificar os agendamentos, organizar clientes
+        e profissionais e gerir o seu espaço de beleza
+        num único sistema.
+      </p>
+    </div>
+
+    <div class="demo-video-wrap">
+
+      <video
+        class="demo-video"
+        controls
+        playsinline
+        preload="metadata"
+        poster="assets/ebs-beauty-systems.jpeg">
+
+        <source src="assets/ebs-beauty-demo.mp4" type="video/mp4">
+
+        O seu navegador não suporta a reprodução de vídeo.
+      </video>
+
+      <div class="demo-video-cta">
+        <p>
+          Quer conhecer melhor o sistema e descobrir
+          como pode apoiar o seu negócio?
+        </p>
+
+        <a
+          href="https://wa.me/351915433044?text=Ol%C3%A1!%20Quero%20conhecer%20melhor%20o%20EBS%20Beauty%20e%20solicitar%20uma%20demonstra%C3%A7%C3%A3o."
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn">
+          Quero conhecer o EBS Beauty
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <section class="advantages" id="vantagens">
   <div class="container">
     <div class="section-heading">
@@ -404,7 +483,7 @@ footer p + p { color: #aebdce; }
       solicitar uma demonstração ou esclarecer dúvidas.
     </p>
     <a
-      href="https://wa.me/351915433044?text=Olá!%20Gostaria%20de%20conhecer%20as%20soluções%20da%20Eliane."
+      href="https://wa.me/351915433044?text=Ol%C3%A1!%20Gostaria%20de%20conhecer%20as%20solu%C3%A7%C3%B5es%20da%20Eliane."
       target="_blank"
       rel="noopener noreferrer"
       class="btn">
@@ -425,3 +504,4 @@ footer p + p { color: #aebdce; }
 
 </body>
 </html>
+
